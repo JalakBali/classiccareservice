@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HygieneID — Solusi Kebersihan Profesional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-50: #eaf7f0;
+    --green-100: #c2ebd5;
+    --green-300: #4aba7f;
+    --green-500: #1e8a52;
+    --green-700: #0f5c35;
+    --green-900: #07311d;
+    --teal-400: #1aada8;
+    --teal-600: #0d7a76;
+    --gray-50: #f8f9fa;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-400: #adb5bd;
+    --gray-600: #495057;
+    --gray-800: #212529;
+    --white: #ffffff;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
+    --shadow-lg: 0 20px 60px rgba(0,0,0,0.13);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--gray-800);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 5%;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 38px; height: 38px;
+    background: var(--green-500);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .nav-logo-icon svg { width: 22px; height: 22px; fill: white; }
+
+  .nav-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-700);
+    letter-spacing: -0.5px;
+  }
+
+  .nav-logo-text span { color: var(--teal-400); }
+
+  .nav-links {
+    display: flex; align-items: center; gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-600);
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green-500); }
+
+  .nav-cta {
+    background: var(--green-500);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    transition: background 0.2s, transform 0.15s !important;
+  }
+
+  .nav-cta:hover { background: var(--green-700) !important; transform: translateY(-1px); }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding-top: 72px;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #f8fdf9 0%, #edf8f2 40%, #e0f5ea 100%);
+  }
+
+  .hero-bg-shape {
+    position: absolute;
+    top: -100px; right: -120px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(30,138,82,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-bg-shape2 {
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(26,173,168,0.07) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative; z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-50);
+    border: 1px solid var(--green-100);
+    color: var(--green-700);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-badge-dot {
+    width: 7px; height: 7px;
+    background: var(--green-300);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--green-900);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--green-500);
+  }
+
+  .hero-desc {
+    font-size: 17px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--green-500);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(30,138,82,0.25);
+  }
+
+  .btn-primary:hover {
+    background: var(--green-700);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30,138,82,0.32);
+  }
+
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent;
+    color: var(--green-700);
+    padding: 14px 24px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1.5px solid var(--green-300);
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--green-50); border-color: var(--green-500); }
+
+  .hero-stats {
+    display: flex; gap: 32px; margin-top: 48px; padding-top: 40px;
+    border-top: 1px solid var(--green-100);
+    flex-wrap: wrap;
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--green-700);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 13px;
+    color: var(--gray-600);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+
+  /* Hero Visual Card */
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-card-main {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card-main::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 5px;
+    background: linear-gradient(90deg, var(--green-500), var(--teal-400));
+  }
+
+  .hero-card-icon-row {
+    display: flex; gap: 14px; margin-bottom: 28px;
+  }
+
+  .hero-icon-box {
+    width: 56px; height: 56px;
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+  }
+
+  .hero-card-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-400);
+    margin-bottom: 8px;
+  }
+
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--green-900);
+    margin-bottom: 20px;
+  }
+
+  .hero-service-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .hero-service-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 14px;
+    color: var(--gray-600);
+    padding: 10px 14px;
+    background: var(--gray-50);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--green-300);
+  }
+
+  .hero-service-item span:first-child { font-size: 18px; }
+
+  .hero-float-badge {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-md);
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .hero-float-icon {
+    width: 44px; height: 44px;
+    background: var(--green-50);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+
+  .hero-float-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green-700);
+    line-height: 1;
+  }
+
+  .hero-float-sub {
+    font-size: 11px;
+    color: var(--gray-400);
+  }
+
+  /* ===== CLIENT LOGOS ===== */
+  .clients {
+    padding: 48px 5%;
+    background: var(--white);
+    border-top: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .clients-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex; align-items: center; gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .clients-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-400);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .clients-logos {
+    display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+    flex: 1;
+  }
+
+  .client-logo-item {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray-200);
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+
+  .client-logo-item:hover { color: var(--gray-400); }
+
+  /* ===== SECTION COMMON ===== */
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 64px;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--green-500);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700;
+    color: var(--green-900);
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--gray-600);
+    line-height: 1.7;
+  }
+
+  /* ===== SERVICES ===== */
+  .services {
+    padding: 100px 5%;
+    background: var(--gray-50);
+  }
+
+  .services-inner { max-width: 1240px; margin: 0 auto; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 36px 32px;
+    border: 1px solid var(--gray-200);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-500), var(--teal-400));
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--green-100);
+  }
+
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-icon {
+    width: 60px; height: 60px;
+    border-radius: var(--radius-md);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+
+  .service-icon.green { background: var(--green-50); }
+  .service-icon.teal { background: #e0f5f5; }
+  .service-icon.blue { background: #e6f1fb; }
+  .service-icon.amber { background: #faeeda; }
+
+  .service-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--green-900);
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .service-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-500);
+    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: gap 0.2s;
+  }
+
+  .service-link:hover { gap: 10px; }
+
+  /* ===== ABOUT ===== */
+  .about {
+    padding: 100px 5%;
+    background: white;
+  }
+
+  .about-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-main-card {
+    background: var(--green-700);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-main-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .about-big-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .about-big-label {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+
+  .about-card-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .about-stat-mini {
+    background: rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 16px;
+  }
+
+  .about-stat-mini-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .about-stat-mini-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+  }
+
+  .about-float {
+    position: absolute;
+    bottom: -24px; right: -24px;
+    background: white;
+    border-radius: var(--radius-md);
+    padding: 18px 22px;
+    box-shadow: var(--shadow-md);
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .about-float-icon { font-size: 28px; }
+
+  .about-float-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-700);
+  }
+
+  .about-float-sub {
+    font-size: 11px;
+    color: var(--gray-400);
+    margin-top: 2px;
+  }
+
+  .about-content .section-header { text-align: left; margin: 0 0 32px; }
+
+  .about-content .section-title { font-size: clamp(26px, 3vw, 36px); }
+
+  .about-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 16px;
+    margin-top: 28px;
+  }
+
+  .about-list-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  .about-check {
+    width: 22px; height: 22px; min-width: 22px;
+    background: var(--green-50);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-top: 1px;
+  }
+
+  .about-check svg { width: 12px; height: 12px; }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials {
+    padding: 100px 5%;
+    background: var(--green-900);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials::before {
+    content: '"';
+    position: absolute;
+    top: -40px; left: 3%;
+    font-family: 'Playfair Display', serif;
+    font-size: 400px;
+    color: rgba(255,255,255,0.03);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .testimonials-inner { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
+
+  .testimonials .section-eyebrow { color: var(--green-300); }
+  .testimonials .section-title { color: white; }
+  .testimonials .section-desc { color: rgba(255,255,255,0.65); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .testi-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    transition: background 0.2s;
+  }
+
+  .testi-card:hover { background: rgba(255,255,255,0.09); }
+
+  .testi-stars {
+    display: flex; gap: 4px; margin-bottom: 20px;
+    color: #f6c90e;
+    font-size: 16px;
+  }
+
+  .testi-text {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.75;
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .testi-author {
+    display: flex; align-items: center; gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .testi-avatar {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--green-500);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .testi-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .testi-role {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  /* ===== FAQ ===== */
+  .faq {
+    padding: 100px 5%;
+    background: var(--gray-50);
+  }
+
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+
+  .faq-list {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .faq-item.open { border-color: var(--green-300); }
+
+  .faq-question {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 24px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--green-900);
+    gap: 16px;
+  }
+
+  .faq-question:hover { background: var(--gray-50); }
+
+  .faq-icon {
+    width: 24px; height: 24px; min-width: 24px;
+    background: var(--green-50);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.25s, background 0.2s;
+    color: var(--green-500);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    background: var(--green-500);
+    color: white;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s;
+  }
+
+  .faq-answer-inner {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.75;
+  }
+
+  .faq-item.open .faq-answer { max-height: 300px; }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    padding: 100px 5%;
+    background: white;
+  }
+
+  .cta-box {
+    max-width: 1240px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--green-700) 0%, var(--teal-600) 100%);
+    border-radius: var(--radius-lg);
+    padding: 72px 60px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cta-box::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 40%;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .cta-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 16px;
+  }
+
+  .cta-title {
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .cta-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex; flex-direction: column; gap: 12px; align-items: center;
+    flex-shrink: 0;
+    position: relative; z-index: 1;
+  }
+
+  .btn-white {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white;
+    color: var(--green-700);
+    padding: 14px 28px;
+    border-radius: 100px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    white-space: nowrap;
+  }
+
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  .cta-hotline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+  }
+
+  .cta-hotline strong { color: white; }
+
+  /* ===== CONTACT FORM ===== */
+  .contact {
+    padding: 100px 5%;
+    background: var(--gray-50);
+  }
+
+  .contact-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-info .section-header { text-align: left; margin: 0 0 40px; }
+
+  .contact-details {
+    display: flex; flex-direction: column; gap: 20px;
+  }
+
+  .contact-detail-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 14px;
+    color: var(--gray-600);
+  }
+
+  .contact-detail-icon {
+    width: 40px; height: 40px; min-width: 40px;
+    background: var(--green-50);
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+
+  .contact-detail-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gray-400);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail-val {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--green-800);
+  }
+
+  .contact-form-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-600);
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--gray-800);
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--green-500);
+    box-shadow: 0 0 0 3px rgba(30,138,82,0.12);
+  }
+
+  .form-textarea { resize: vertical; min-height: 110px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--green-500);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover { background: var(--green-700); transform: translateY(-1px); }
+
+  .form-privacy {
+    font-size: 12px;
+    color: var(--gray-400);
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--green-900);
+    padding: 64px 5% 32px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 32px;
+  }
+
+  .footer-brand-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    margin-top: 16px;
+    max-width: 280px;
+  }
+
+  .footer-col h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 18px;
+  }
+
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-links a {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--green-300); }
+
+  .footer-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-in {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .delay-2 { animation-delay: 0.2s; opacity: 0; }
+  .delay-3 { animation-delay: 0.35s; opacity: 0; }
+  .delay-4 { animation-delay: 0.5s; opacity: 0; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-visual { display: none; }
+    .about-inner { grid-template-columns: 1fr; }
+    .cta-box { grid-template-columns: 1fr; text-align: center; }
+    .cta-actions { align-items: center; }
+    .contact-inner { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    nav { padding: 0 4%; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .hero-stats { gap: 20px; }
+    .cta-box { padding: 48px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C4.5 5.8 3 7.5 3 9.5C3 11.8 4.8 13.7 7 13.9V20C7 21.1 7.9 22 9 22H15C16.1 22 17 21.1 17 20V13.9C19.2 13.7 21 11.8 21 9.5C21 7.5 19.5 5.8 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/>
+      </svg>
+    </div>
+    <span class="nav-logo-text">Hygiene<span>ID</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#tentang">Tentang Kami</a></li>
+    <li><a href="#testimoni">Klien</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#kontak" class="nav-cta">Hubungi Kami</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-shape2"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge animate-in">
+        <div class="hero-badge-dot"></div>
+        Solusi Hygiene Profesional #1 di Indonesia
+      </div>
+      <h1 class="animate-in delay-1">Lingkungan Bisnis <em>Lebih Bersih,</em> Lebih Sehat</h1>
+      <p class="hero-desc animate-in delay-2">
+        Kami menyediakan layanan hygiene profesional lengkap untuk toilet, ruang kerja, dan fasilitas bisnis Anda. Solusi terpercaya selama lebih dari 30 tahun di Indonesia.
+      </p>
+      <div class="hero-actions animate-in delay-3">
+        <a href="#kontak" class="btn-primary">
+          Konsultasi Gratis
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#layanan" class="btn-secondary">Lihat Layanan</a>
+      </div>
+      <div class="hero-stats animate-in delay-4">
+        <div>
+          <div class="hero-stat-num">30+</div>
+          <div class="hero-stat-label">Tahun Pengalaman</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">46</div>
+          <div class="hero-stat-label">Cabang di Indonesia</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">5.000+</div>
+          <div class="hero-stat-label">Klien Bisnis</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual animate-in delay-2">
+      <div class="hero-card-main">
+        <div class="hero-card-icon-row">
+          <div class="hero-icon-box" style="background:#eaf7f0;">🧴</div>
+          <div class="hero-icon-box" style="background:#e0f5f5;">🌬️</div>
+          <div class="hero-icon-box" style="background:#faeeda;">✋</div>
+          <div class="hero-icon-box" style="background:#e6f1fb;">🚻</div>
+        </div>
+        <div class="hero-card-label">Layanan Unggulan</div>
+        <h3 class="hero-card-title">Rangkaian Solusi Hygiene</h3>
+        <ul class="hero-service-list">
+          <li class="hero-service-item"><span>🧴</span><span>Dispenser Sabun &amp; Hand Sanitizer</span></li>
+          <li class="hero-service-item"><span>🌸</span><span>Premium Scenting &amp; Air Freshener</span></li>
+          <li class="hero-service-item"><span>🚻</span><span>Feminine Hygiene Unit</span></li>
+          <li class="hero-service-item"><span>💨</span><span>Hand Dryer Profesional</span></li>
+        </ul>
+      </div>
+      <div class="hero-float-badge">
+        <div class="hero-float-icon">✅</div>
+        <div>
+          <div class="hero-float-num">Bersertifikat</div>
+          <div class="hero-float-sub">Halal &amp; ISO Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT LOGOS -->
+<div class="clients">
+  <div class="clients-inner">
+    <span class="clients-label">Dipercaya oleh</span>
+    <div class="clients-logos">
+      <span class="client-logo-item">Marriott Hotels</span>
+      <span class="client-logo-item">Lippo Malls</span>
+      <span class="client-logo-item">Astra Group</span>
+      <span class="client-logo-item">Unilever</span>
+      <span class="client-logo-item">BRI</span>
+      <span class="client-logo-item">Pertamina</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="layanan">
+  <div class="services-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Layanan Kami</div>
+      <h2 class="section-title">Solusi Hygiene untuk Setiap Kebutuhan Bisnis</h2>
+      <p class="section-desc">Dari toilet hingga ruang kerja, kami memiliki produk dan layanan tepat untuk menjaga standar kebersihan tertinggi di bisnis Anda.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon green">🧴</div>
+        <h3>Hand Hygiene</h3>
+        <p>Dispenser sabun tangan, hand sanitizer, dan hand dryer profesional untuk mencegah penyebaran kuman di tempat kerja.</p>
+        <a href="#" class="service-link">Pelajari selengkapnya →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon teal">🌸</div>
+        <h3>Premium Scenting</h3>
+        <p>Ciptakan kesan pertama yang tak terlupakan dengan sistem wewangian premium yang dapat disesuaikan untuk brand Anda.</p>
+        <a href="#" class="service-link">Pelajari selengkapnya →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon blue">🚻</div>
+        <h3>Toilet Hygiene</h3>
+        <p>Rangkaian lengkap produk kebersihan toilet termasuk Feminine Hygiene Unit, air freshener, dan solusi sanitasi modern.</p>
+        <a href="#" class="service-link">Pelajari selengkapnya →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon amber">🌿</div>
+        <h3>Essential Range</h3>
+        <p>Solusi hygiene komersial esensial yang dirancang untuk mencegah kontaminasi silang dan melindungi kesehatan di lingkungan bisnis.</p>
+        <a href="#" class="service-link">Pelajari selengkapnya →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon green">🧹</div>
+        <h3>Floor Care</h3>
+        <p>Perawatan lantai profesional dengan keset dan solusi floor mat yang menjaga kebersihan dan keselamatan area bisnis Anda.</p>
+        <a href="#" class="service-link">Pelajari selengkapnya →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon teal">♻️</div>
+        <h3>Eco-Friendly Solutions</h3>
+        <p>Solusi hygiene ramah lingkungan yang mendukung keberlanjutan bisnis Anda — termasuk program pengurangan plastik yang telah terbukti.</p>
+        <a href="#" class="service-link">Pelajari selengkapnya →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="tentang">
+  <div class="about-inner">
+    <div class="about-visual">
+      <div class="about-main-card">
+        <div class="about-big-num">30+</div>
+        <div class="about-big-label">Tahun melayani bisnis Indonesia</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;">Kami memahami standar kebersihan yang dibutuhkan berbagai industri — dari hotel bintang lima hingga pusat perbelanjaan terbesar.</p>
+        <div class="about-card-stats">
+          <div class="about-stat-mini">
+            <div class="about-stat-mini-num">46</div>
+            <div class="about-stat-mini-label">Cabang Nasional</div>
+          </div>
+          <div class="about-stat-mini">
+            <div class="about-stat-mini-num">5.000+</div>
+            <div class="about-stat-mini-label">Klien Aktif</div>
+          </div>
+          <div class="about-stat-mini">
+            <div class="about-stat-mini-num">200+</div>
+            <div class="about-stat-mini-label">Tenaga Ahli</div>
+          </div>
+          <div class="about-stat-mini">
+            <div class="about-stat-mini-num">70+</div>
+            <div class="about-stat-mini-label">Negara Operasi</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-float">
+        <div class="about-float-icon">🏆</div>
+        <div>
+          <div class="about-float-text">ISO 9001 Certified</div>
+          <div class="about-float-sub">Standar kualitas internasional</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="section-header">
+        <div class="section-eyebrow">Tentang Kami</div>
+        <h2 class="section-title">Ahlinya Hygiene untuk Bisnis Indonesia</h2>
+        <p class="section-desc">Kami adalah mitra hygiene terpercaya bagi ribuan bisnis di seluruh Indonesia. Solusi kami dirancang khusus untuk memenuhi kebutuhan spesifik setiap industri.</p>
+      </div>
+      <ul class="about-list">
+        <li class="about-list-item">
+          <div class="about-check">
+            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Layanan profesional tersedia di <strong>46 kota</strong> di seluruh Indonesia, termasuk Bali, Surabaya, Bandung, dan Medan.</span>
+        </li>
+        <li class="about-list-item">
+          <div class="about-check">
+            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Semua produk telah mendapatkan <strong>sertifikasi Halal</strong> dan memenuhi standar regulasi kesehatan Indonesia.</span>
+        </li>
+        <li class="about-list-item">
+          <div class="about-check">
+            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Sistem penyewaan fleksibel dengan <strong>kontrak yang dapat disesuaikan</strong> — tanpa biaya pembelian awal yang besar.</span>
+        </li>
+        <li class="about-list-item">
+          <div class="about-check">
+            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span>Tim teknisi berpengalaman siap memberikan <strong>servis berkala</strong> dan respons cepat untuk setiap kebutuhan Anda.</span>
+        </li>
+      </ul>
+      <div style="margin-top:36px;">
+        <a href="#kontak" class="btn-primary">Jadwalkan Asesmen Gratis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimoni">
+  <div class="testimonials-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">Testimoni Klien</div>
+      <h2 class="section-title">Dipercaya oleh Bisnis Terkemuka</h2>
+      <p class="section-desc">Apa yang dikatakan klien kami tentang layanan hygiene profesional kami.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Sejak menggunakan layanan HygieneID, standar kebersihan toilet kami meningkat drastis. Tamu hotel selalu memberikan feedback positif tentang fasilitas kamar mandi kami."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RD</div>
+          <div>
+            <div class="testi-name">Ridwan Darmawan</div>
+            <div class="testi-role">General Manager — Hotel Bintang 5, Jakarta</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Premium Scenting dari HygieneID benar-benar mengubah pengalaman berbelanja di mall kami. Pengunjung sering bertanya wewangian apa yang kami gunakan — brand awareness meningkat!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SA</div>
+          <div>
+            <div class="testi-name">Siti Aisyah</div>
+            <div class="testi-role">Facility Manager — Pusat Perbelanjaan, Surabaya</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Sistem dispenser sabun otomatis mereka sangat membantu dalam menjaga higienitas karyawan di pabrik kami. Kasus sakit akibat kuman menurun signifikan sejak penggunaan."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">BT</div>
+          <div>
+            <div class="testi-name">Budi Tanoto</div>
+            <div class="testi-role">HSE Manager — Perusahaan Manufaktur, Karawang</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="section-header">
+      <div class="section-eyebrow">FAQ</div>
+      <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
+      <p class="section-desc">Temukan jawaban atas pertanyaan umum mengenai layanan kami.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-question">
+          <span>Bagaimana sistem penyewaan unit HygieneID bekerja?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Unit HygieneID tersedia melalui sistem kontrak penyewaan, bukan pembelian putus. Ini berarti Anda mendapatkan unit, instalasi profesional, pengisian ulang produk secara berkala, serta servis dan perawatan — semua dalam satu biaya bulanan yang terjangkau. Hubungi kami untuk mendapatkan penawaran yang disesuaikan dengan kebutuhan bisnis Anda.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Apakah layanan tersedia di seluruh Indonesia?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ya, kami memiliki 46 cabang yang tersebar di seluruh Indonesia, termasuk Jakarta, Surabaya, Bandung, Bali, Medan, Semarang, dan kota-kota besar lainnya. Tim ahli kami siap melayani kebutuhan hygiene bisnis Anda di mana pun Anda berada.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Apakah produk HygieneID sudah bersertifikat Halal?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Ya, seluruh rangkaian produk kami telah mendapatkan sertifikasi Halal sesuai standar yang berlaku di Indonesia. Kami berkomitmen untuk menyediakan solusi hygiene yang aman dan sesuai untuk seluruh segmen bisnis di Indonesia.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Berapa lama proses instalasi unit?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Proses instalasi biasanya dapat diselesaikan dalam 1–2 hari kerja setelah kontrak ditandatangani. Tim teknisi berpengalaman kami akan mengunjungi lokasi Anda, melakukan survei, dan menentukan penempatan unit yang paling optimal sesuai kebutuhan fasilitas Anda.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Industri apa saja yang dilayani?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Kami melayani berbagai industri termasuk perhotelan, pusat perbelanjaan, perkantoran, rumah sakit, restoran, pabrik manufaktur, lembaga pendidikan, dan banyak lagi. Solusi kami dapat dikustomisasi sesuai standar dan regulasi industri masing-masing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-section">
+  <div class="cta-box">
+    <div style="position:relative;z-index:1;">
+      <div class="cta-eyebrow">Mulai Sekarang</div>
+      <h2 class="cta-title">Siap Meningkatkan Standar Hygiene Bisnis Anda?</h2>
+      <p class="cta-desc">Konsultasikan kebutuhan hygiene bisnis Anda dengan para ahli kami. Asesmen awal gratis, tanpa komitmen.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="#kontak" class="btn-white">
+        Hubungi Ahli Kami
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="cta-hotline">atau hubungi <strong>150808</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="kontak">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-header">
+        <div class="section-eyebrow">Kontak Kami</div>
+        <h2 class="section-title">Kami Siap Membantu Bisnis Anda</h2>
+        <p class="section-desc">Isi formulir di samping atau hubungi kami langsung. Tim kami akan merespons dalam 1x24 jam kerja.</p>
+      </div>
+      <div class="contact-details">
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📞</div>
+          <div>
+            <div class="contact-detail-label">Hotline</div>
+            <div class="contact-detail-val">150808</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📧</div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-val">info@hygieneid.co.id</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Kantor Pusat</div>
+            <div class="contact-detail-val">South Quarter Tower B, Lantai 21<br>Jl. R.A. Kartini, Jakarta Selatan 12430</div>
+          </div>
+        </div>
+        <div class="contact-detail-item">
+          <div class="contact-detail-icon">🕐</div>
+          <div>
+            <div class="contact-detail-label">Jam Operasional</div>
+            <div class="contact-detail-val">Senin – Jumat, 08.00 – 17.00 WIB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-card">
+      <h3 style="font-size:20px;color:var(--green-900);margin-bottom:24px;">Kirim Pesan</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Nama Lengkap</label>
+          <input type="text" class="form-input" placeholder="Budi Santoso">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nama Perusahaan</label>
+          <input type="text" class="form-input" placeholder="PT. Maju Bersama">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="budi@perusahaan.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nomor Telepon</label>
+          <input type="tel" class="form-input" placeholder="0812-xxxx-xxxx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Industri</label>
+        <select class="form-select">
+          <option value="">Pilih industri bisnis Anda</option>
+          <option>Perhotelan & Pariwisata</option>
+          <option>Pusat Perbelanjaan / Retail</option>
+          <option>Perkantoran</option>
+          <option>Rumah Sakit / Klinik</option>
+          <option>Restoran & F&B</option>
+          <option>Manufaktur / Industri</option>
+          <option>Pendidikan</option>
+          <option>Lainnya</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Pesan / Kebutuhan Anda</label>
+        <textarea class="form-textarea" placeholder="Ceritakan kebutuhan hygiene bisnis Anda..."></textarea>
+      </div>
+      <button class="form-submit">Kirim Pesan Sekarang</button>
+      <p class="form-privacy">🔒 Informasi Anda aman bersama kami. Kami tidak akan membagikan data Anda kepada pihak ketiga.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:34px;height:34px;background:var(--green-500);border-radius:6px;display:flex;align-items:center;justify-content:center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C4.5 5.8 3 7.5 3 9.5C3 11.8 4.8 13.7 7 13.9V20C7 21.1 7.9 22 9 22H15C16.1 22 17 21.1 17 20V13.9C19.2 13.7 21 11.8 21 9.5C21 7.5 19.5 5.8 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/></svg>
+          </div>
+          <span style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;">HygieneID</span>
+        </div>
+        <p class="footer-brand-desc">Solusi kebersihan dan hygiene profesional untuk bisnis Indonesia. Melayani 46 kota dengan standar internasional selama lebih dari 30 tahun.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul class="footer-links">
+          <li><a href="#">Hand Hygiene</a></li>
+          <li><a href="#">Premium Scenting</a></li>
+          <li><a href="#">Toilet Hygiene</a></li>
+          <li><a href="#">Essential Range</a></li>
+          <li><a href="#">Floor Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <ul class="footer-links">
+          <li><a href="#">Tentang Kami</a></li>
+          <li><a href="#">Cabang Kami</a></li>
+          <li><a href="#">Karir</a></li>
+          <li><a href="#">Blog & Tips</a></li>
+          <li><a href="#">Keberlanjutan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Dukungan</h4>
+        <ul class="footer-links">
+          <li><a href="#">Hubungi Kami</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Syarat & Ketentuan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 HygieneID. Seluruh hak cipta dilindungi.</span>
+      <span>Bagian dari Rentokil Initial Group</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.service-card, .testi-card, .about-main-card').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
