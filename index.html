@@ -3,1582 +3,574 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HygieneID — Solusi Kebersihan Profesional</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Classic Care Service — Lingkungan Bersih Dan Sehat Layak Anda Dapatkan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --green-50: #eaf7f0;
-    --green-100: #c2ebd5;
-    --green-300: #4aba7f;
-    --green-500: #1e8a52;
-    --green-700: #0f5c35;
-    --green-900: #07311d;
-    --teal-400: #1aada8;
-    --teal-600: #0d7a76;
-    --gray-50: #f8f9fa;
-    --gray-100: #f1f3f5;
-    --gray-200: #e9ecef;
-    --gray-400: #adb5bd;
-    --gray-600: #495057;
-    --gray-800: #212529;
-    --white: #ffffff;
-    --radius-sm: 6px;
-    --radius-md: 12px;
-    --radius-lg: 20px;
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
-    --shadow-md: 0 8px 32px rgba(0,0,0,0.10);
-    --shadow-lg: 0 20px 60px rgba(0,0,0,0.13);
+    --teal: #00a89d; --teal-dark: #007d74; --teal-light: #e0f5f4; --teal-50: #f0fafa;
+    --red: #e8192c; --gray-50: #f8f9fa; --gray-100: #f1f3f5; --gray-200: #e9ecef;
+    --gray-400: #adb5bd; --gray-600: #495057; --gray-800: #212529; --white: #ffffff;
+    --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px;
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.06); --shadow-md: 0 8px 32px rgba(0,0,0,0.10); --shadow-lg: 0 20px 60px rgba(0,0,0,0.13);
   }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    color: var(--gray-800);
-    background: var(--white);
-    overflow-x: hidden;
-  }
-
+  body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); background: var(--white); overflow-x: hidden; }
   h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
 
-  /* ===== NAVBAR ===== */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--gray-200);
-    padding: 0 5%;
-    height: 72px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
+  /* NAVBAR */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); padding: 0 5%; height: 72px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .logo-text-classic { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--teal); letter-spacing: -0.5px; line-height: 1; }
+  .logo-arrow { color: var(--red); }
+  .logo-text-sub { font-size: 10px; font-weight: 500; color: var(--gray-600); letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 2px; }
+  .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--gray-600); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--teal); }
+  .nav-pills { display: flex; align-items: center; gap: 2px; background: var(--teal); padding: 5px 10px; border-radius: 100px; }
+  .nav-pill { font-size: 12px; font-weight: 600; color: white; text-decoration: none; padding: 3px 10px; border-radius: 100px; transition: background 0.2s; }
+  .nav-pill:hover { background: rgba(255,255,255,0.2); color: white; }
+  .nav-pill-dot { color: rgba(255,255,255,0.45); font-size: 8px; }
+  .nav-cta { background: var(--teal) !important; color: white !important; padding: 10px 22px; border-radius: 100px; font-weight: 600 !important; font-size: 14px !important; }
+  .nav-cta:hover { background: var(--teal-dark) !important; }
 
-  .nav-logo {
-    display: flex; align-items: center; gap: 10px;
-    text-decoration: none;
-  }
+  /* HERO */
+  .hero { padding-top: 72px; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(145deg, #f0fafa 0%, #e6f7f6 40%, #d8f3f1 100%); position: relative; overflow: hidden; }
+  .hero-bg1 { position: absolute; top: -120px; right: -120px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,168,157,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+  .hero-bg2 { position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,25,44,0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+  .hero-inner { max-width: 1240px; margin: 0 auto; padding: 80px 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--teal-light); color: var(--teal-dark); font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 100px; margin-bottom: 24px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .hero-badge-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+  .hero h1 { font-size: clamp(34px, 4.5vw, 52px); font-weight: 700; line-height: 1.12; color: #07312a; margin-bottom: 10px; letter-spacing: -1px; }
+  .hero h1 em { font-style: italic; color: var(--teal); }
+  .hero-tagline-en { font-size: 17px; font-style: italic; color: var(--teal-dark); margin-bottom: 18px; font-family: 'Playfair Display', serif; }
+  .hero-desc { font-size: 15px; color: var(--gray-600); line-height: 1.75; margin-bottom: 32px; max-width: 500px; }
+  .hero-pills { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+  .hero-pill { display: inline-flex; align-items: center; gap: 5px; background: var(--teal); color: white; font-size: 13px; font-weight: 600; padding: 7px 16px; border-radius: 100px; }
+  .hero-pill.outline { background: transparent; border: 1.5px solid var(--teal); color: var(--teal-dark); }
+  .hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); color: white; padding: 13px 26px; border-radius: 100px; font-size: 15px; font-weight: 600; text-decoration: none; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(0,168,157,0.3); }
+  .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--teal-dark); padding: 13px 22px; border-radius: 100px; font-size: 15px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--teal); transition: all 0.2s; }
+  .btn-secondary:hover { background: var(--teal-50); }
+  .hero-stats { display: flex; gap: 28px; margin-top: 44px; padding-top: 36px; border-top: 1px solid rgba(0,168,157,0.2); flex-wrap: wrap; }
+  .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--teal-dark); line-height: 1; }
+  .hero-stat-label { font-size: 12px; color: var(--gray-600); margin-top: 4px; }
+  .hero-card { background: white; border-radius: var(--radius-lg); padding: 34px; box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+  .hero-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal), var(--red)); }
+  .hero-card-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); margin-bottom: 6px; }
+  .hero-card-title { font-family: 'Playfair Display', serif; font-size: 19px; color: #07312a; margin-bottom: 18px; }
+  .hero-svc-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .hero-svc-item { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-600); padding: 9px 12px; background: var(--teal-50); border-radius: var(--radius-sm); border-left: 3px solid var(--teal); }
+  .hero-float { position: absolute; bottom: -18px; right: -18px; background: white; border-radius: var(--radius-md); padding: 13px 17px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 9px; }
+  .hero-float-icon { width: 38px; height: 38px; background: var(--teal-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; }
+  .hero-float-num { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--teal-dark); line-height: 1; }
+  .hero-float-sub { font-size: 10px; color: var(--gray-400); }
 
-  .nav-logo-icon {
-    width: 38px; height: 38px;
-    background: var(--green-500);
-    border-radius: var(--radius-sm);
-    display: flex; align-items: center; justify-content: center;
-  }
+  /* CLIENTS */
+  .clients { padding: 36px 5%; background: white; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); }
+  .clients-inner { max-width: 1240px; margin: 0 auto; display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .clients-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray-400); white-space: nowrap; flex-shrink: 0; }
+  .clients-logos { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; flex: 1; }
+  .client-item { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 700; color: var(--gray-200); white-space: nowrap; transition: color 0.2s; }
+  .client-item:hover { color: var(--gray-400); }
 
-  .nav-logo-icon svg { width: 22px; height: 22px; fill: white; }
+  /* SECTION */
+  .section-header { text-align: center; max-width: 620px; margin: 0 auto 56px; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 12px; }
+  .section-title { font-size: clamp(26px, 3.5vw, 38px); font-weight: 700; color: #07312a; line-height: 1.2; margin-bottom: 14px; letter-spacing: -0.5px; }
+  .section-desc { font-size: 15px; color: var(--gray-600); line-height: 1.75; }
 
-  .nav-logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--green-700);
-    letter-spacing: -0.5px;
-  }
-
-  .nav-logo-text span { color: var(--teal-400); }
-
-  .nav-links {
-    display: flex; align-items: center; gap: 32px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--gray-600);
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--green-500); }
-
-  .nav-cta {
-    background: var(--green-500);
-    color: white !important;
-    padding: 10px 22px;
-    border-radius: 100px;
-    font-weight: 600 !important;
-    font-size: 14px !important;
-    transition: background 0.2s, transform 0.15s !important;
-  }
-
-  .nav-cta:hover { background: var(--green-700) !important; transform: translateY(-1px); }
-
-  /* ===== HERO ===== */
-  .hero {
-    padding-top: 72px;
-    min-height: 100vh;
-    display: flex; align-items: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(145deg, #f8fdf9 0%, #edf8f2 40%, #e0f5ea 100%);
-  }
-
-  .hero-bg-shape {
-    position: absolute;
-    top: -100px; right: -120px;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(30,138,82,0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  .hero-bg-shape2 {
-    position: absolute;
-    bottom: -80px; left: -80px;
-    width: 500px; height: 500px;
-    background: radial-gradient(circle, rgba(26,173,168,0.07) 0%, transparent 70%);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  .hero-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 80px 5%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    position: relative; z-index: 1;
-  }
-
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--green-50);
-    border: 1px solid var(--green-100);
-    color: var(--green-700);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 24px;
-    letter-spacing: 0.3px;
-  }
-
-  .hero-badge-dot {
-    width: 7px; height: 7px;
-    background: var(--green-300);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.3); }
-  }
-
-  .hero h1 {
-    font-size: clamp(38px, 5vw, 58px);
-    font-weight: 700;
-    line-height: 1.12;
-    color: var(--green-900);
-    margin-bottom: 24px;
-    letter-spacing: -1px;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--green-500);
-  }
-
-  .hero-desc {
-    font-size: 17px;
-    color: var(--gray-600);
-    line-height: 1.7;
-    margin-bottom: 40px;
-    max-width: 480px;
-  }
-
-  .hero-actions {
-    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--green-500);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 100px;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 16px rgba(30,138,82,0.25);
-  }
-
-  .btn-primary:hover {
-    background: var(--green-700);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(30,138,82,0.32);
-  }
-
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: transparent;
-    color: var(--green-700);
-    padding: 14px 24px;
-    border-radius: 100px;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1.5px solid var(--green-300);
-    transition: all 0.2s;
-  }
-
-  .btn-secondary:hover { background: var(--green-50); border-color: var(--green-500); }
-
-  .hero-stats {
-    display: flex; gap: 32px; margin-top: 48px; padding-top: 40px;
-    border-top: 1px solid var(--green-100);
-    flex-wrap: wrap;
-  }
-
-  .hero-stat-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--green-700);
-    line-height: 1;
-  }
-
-  .hero-stat-label {
-    font-size: 13px;
-    color: var(--gray-600);
-    margin-top: 4px;
-    line-height: 1.4;
-  }
-
-  /* Hero Visual Card */
-  .hero-visual {
-    position: relative;
-  }
-
-  .hero-card-main {
-    background: white;
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-card-main::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 5px;
-    background: linear-gradient(90deg, var(--green-500), var(--teal-400));
-  }
-
-  .hero-card-icon-row {
-    display: flex; gap: 14px; margin-bottom: 28px;
-  }
-
-  .hero-icon-box {
-    width: 56px; height: 56px;
-    border-radius: var(--radius-md);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 26px;
-  }
-
-  .hero-card-label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--gray-400);
-    margin-bottom: 8px;
-  }
-
-  .hero-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--green-900);
-    margin-bottom: 20px;
-  }
-
-  .hero-service-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 12px;
-  }
-
-  .hero-service-item {
-    display: flex; align-items: center; gap: 12px;
-    font-size: 14px;
-    color: var(--gray-600);
-    padding: 10px 14px;
-    background: var(--gray-50);
-    border-radius: var(--radius-sm);
-    border-left: 3px solid var(--green-300);
-  }
-
-  .hero-service-item span:first-child { font-size: 18px; }
-
-  .hero-float-badge {
-    position: absolute;
-    bottom: -20px; right: -20px;
-    background: white;
-    border-radius: var(--radius-md);
-    padding: 16px 20px;
-    box-shadow: var(--shadow-md);
-    display: flex; align-items: center; gap: 12px;
-  }
-
-  .hero-float-icon {
-    width: 44px; height: 44px;
-    background: var(--green-50);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-  }
-
-  .hero-float-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--green-700);
-    line-height: 1;
-  }
-
-  .hero-float-sub {
-    font-size: 11px;
-    color: var(--gray-400);
-  }
-
-  /* ===== CLIENT LOGOS ===== */
-  .clients {
-    padding: 48px 5%;
-    background: var(--white);
-    border-top: 1px solid var(--gray-100);
-    border-bottom: 1px solid var(--gray-100);
-  }
-
-  .clients-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    display: flex; align-items: center; gap: 48px;
-    flex-wrap: wrap;
-  }
-
-  .clients-label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--gray-400);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .clients-logos {
-    display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
-    flex: 1;
-  }
-
-  .client-logo-item {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--gray-200);
-    letter-spacing: -0.5px;
-    white-space: nowrap;
-    transition: color 0.2s;
-  }
-
-  .client-logo-item:hover { color: var(--gray-400); }
-
-  /* ===== SECTION COMMON ===== */
-  .section-header {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 64px;
-  }
-
-  .section-eyebrow {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--green-500);
-    margin-bottom: 14px;
-  }
-
-  .section-title {
-    font-size: clamp(28px, 3.5vw, 40px);
-    font-weight: 700;
-    color: var(--green-900);
-    line-height: 1.2;
-    margin-bottom: 16px;
-    letter-spacing: -0.5px;
-  }
-
-  .section-desc {
-    font-size: 16px;
-    color: var(--gray-600);
-    line-height: 1.7;
-  }
-
-  /* ===== SERVICES ===== */
-  .services {
-    padding: 100px 5%;
-    background: var(--gray-50);
-  }
-
+  /* SERVICES */
+  .services { padding: 96px 5%; background: var(--gray-50); }
   .services-inner { max-width: 1240px; margin: 0 auto; }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .service-card {
-    background: white;
-    border-radius: var(--radius-lg);
-    padding: 36px 32px;
-    border: 1px solid var(--gray-200);
-    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--green-500), var(--teal-400));
-    transform: scaleX(0);
-    transition: transform 0.3s;
-    transform-origin: left;
-  }
-
-  .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--green-100);
-  }
-
-  .service-card:hover::after { transform: scaleX(1); }
-
-  .service-icon {
-    width: 60px; height: 60px;
-    border-radius: var(--radius-md);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px;
-    margin-bottom: 22px;
-  }
-
-  .service-icon.green { background: var(--green-50); }
-  .service-icon.teal { background: #e0f5f5; }
-  .service-icon.blue { background: #e6f1fb; }
-  .service-icon.amber { background: #faeeda; }
-
-  .service-card h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--green-900);
-    margin-bottom: 10px;
-  }
-
-  .service-card p {
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.7;
-    margin-bottom: 20px;
-  }
-
-  .service-link {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--green-500);
-    text-decoration: none;
-    display: inline-flex; align-items: center; gap: 6px;
-    transition: gap 0.2s;
-  }
-
-  .service-link:hover { gap: 10px; }
-
-  /* ===== ABOUT ===== */
-  .about {
-    padding: 100px 5%;
-    background: white;
-  }
-
-  .about-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .about-visual {
-    position: relative;
-  }
-
-  .about-main-card {
-    background: var(--green-700);
-    border-radius: var(--radius-lg);
-    padding: 48px;
-    color: white;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .about-main-card::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 240px; height: 240px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-  }
-
-  .about-big-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 1;
-    color: white;
-    margin-bottom: 8px;
-  }
-
-  .about-big-label {
-    font-size: 16px;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 32px;
-  }
-
-  .about-card-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 32px;
-  }
-
-  .about-stat-mini {
-    background: rgba(255,255,255,0.1);
-    border-radius: var(--radius-md);
-    padding: 16px;
-  }
-
-  .about-stat-mini-num {
-    font-family: 'Playfair Display', serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-  }
-
-  .about-stat-mini-label {
-    font-size: 12px;
-    color: rgba(255,255,255,0.65);
-    margin-top: 4px;
-  }
-
-  .about-float {
-    position: absolute;
-    bottom: -24px; right: -24px;
-    background: white;
-    border-radius: var(--radius-md);
-    padding: 18px 22px;
-    box-shadow: var(--shadow-md);
-    display: flex; align-items: center; gap: 12px;
-  }
-
-  .about-float-icon { font-size: 28px; }
-
-  .about-float-text {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--green-700);
-  }
-
-  .about-float-sub {
-    font-size: 11px;
-    color: var(--gray-400);
-    margin-top: 2px;
-  }
-
-  .about-content .section-header { text-align: left; margin: 0 0 32px; }
-
-  .about-content .section-title { font-size: clamp(26px, 3vw, 36px); }
-
-  .about-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 16px;
-    margin-top: 28px;
-  }
-
-  .about-list-item {
-    display: flex; align-items: flex-start; gap: 14px;
-    font-size: 15px;
-    color: var(--gray-600);
-    line-height: 1.6;
-  }
-
-  .about-check {
-    width: 22px; height: 22px; min-width: 22px;
-    background: var(--green-50);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    margin-top: 1px;
-  }
-
-  .about-check svg { width: 12px; height: 12px; }
-
-  /* ===== TESTIMONIALS ===== */
-  .testimonials {
-    padding: 100px 5%;
-    background: var(--green-900);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .testimonials::before {
-    content: '"';
-    position: absolute;
-    top: -40px; left: 3%;
-    font-family: 'Playfair Display', serif;
-    font-size: 400px;
-    color: rgba(255,255,255,0.03);
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .testimonials-inner { max-width: 1240px; margin: 0 auto; position: relative; z-index: 1; }
-
-  .testimonials .section-eyebrow { color: var(--green-300); }
-  .testimonials .section-title { color: white; }
-  .testimonials .section-desc { color: rgba(255,255,255,0.65); }
-
-  .testi-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-  }
-
-  .testi-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    transition: background 0.2s;
-  }
-
-  .testi-card:hover { background: rgba(255,255,255,0.09); }
-
-  .testi-stars {
-    display: flex; gap: 4px; margin-bottom: 20px;
-    color: #f6c90e;
-    font-size: 16px;
-  }
-
-  .testi-text {
-    font-size: 15px;
-    color: rgba(255,255,255,0.85);
-    line-height: 1.75;
-    margin-bottom: 24px;
-    font-style: italic;
-  }
-
-  .testi-author {
-    display: flex; align-items: center; gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .testi-avatar {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: var(--green-500);
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700;
-    font-size: 15px;
-    color: white;
-    flex-shrink: 0;
-  }
-
-  .testi-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: white;
-  }
-
-  .testi-role {
-    font-size: 12px;
-    color: rgba(255,255,255,0.5);
-    margin-top: 2px;
-  }
-
-  /* ===== FAQ ===== */
-  .faq {
-    padding: 100px 5%;
-    background: var(--gray-50);
-  }
-
-  .faq-inner { max-width: 800px; margin: 0 auto; }
-
-  .faq-list {
-    display: flex; flex-direction: column; gap: 12px;
-  }
-
-  .faq-item {
-    background: white;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--gray-200);
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-
-  .faq-item.open { border-color: var(--green-300); }
-
-  .faq-question {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 20px 24px;
-    cursor: pointer;
-    user-select: none;
-    font-size: 15px;
-    font-weight: 500;
-    color: var(--green-900);
-    gap: 16px;
-  }
-
-  .faq-question:hover { background: var(--gray-50); }
-
-  .faq-icon {
-    width: 24px; height: 24px; min-width: 24px;
-    background: var(--green-50);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    transition: transform 0.25s, background 0.2s;
-    color: var(--green-500);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1;
-  }
-
-  .faq-item.open .faq-icon {
-    transform: rotate(45deg);
-    background: var(--green-500);
-    color: white;
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease, padding 0.25s;
-  }
-
-  .faq-answer-inner {
-    padding: 0 24px 20px;
-    font-size: 14px;
-    color: var(--gray-600);
-    line-height: 1.75;
-  }
-
-  .faq-item.open .faq-answer { max-height: 300px; }
-
-  /* ===== CTA ===== */
-  .cta-section {
-    padding: 100px 5%;
-    background: white;
-  }
-
-  .cta-box {
-    max-width: 1240px;
-    margin: 0 auto;
-    background: linear-gradient(135deg, var(--green-700) 0%, var(--teal-600) 100%);
-    border-radius: var(--radius-lg);
-    padding: 72px 60px;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 40px;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .cta-box::before {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 360px; height: 360px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  .cta-box::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; left: 40%;
-    width: 200px; height: 200px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  .cta-eyebrow {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 16px;
-  }
-
-  .cta-title {
-    font-size: clamp(26px, 3vw, 38px);
-    font-weight: 700;
-    color: white;
-    line-height: 1.2;
-    margin-bottom: 12px;
-  }
-
-  .cta-desc {
-    font-size: 15px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.6;
-  }
-
-  .cta-actions {
-    display: flex; flex-direction: column; gap: 12px; align-items: center;
-    flex-shrink: 0;
-    position: relative; z-index: 1;
-  }
-
-  .btn-white {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: white;
-    color: var(--green-700);
-    padding: 14px 28px;
-    border-radius: 100px;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.2s;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    white-space: nowrap;
-  }
-
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .svc-card { background: white; border-radius: var(--radius-lg); padding: 30px 26px; border: 1px solid var(--gray-200); transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; position: relative; overflow: hidden; }
+  .svc-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--red)); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .svc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--teal-light); }
+  .svc-card:hover::after { transform: scaleX(1); }
+  .svc-icon { width: 54px; height: 54px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; background: var(--teal-50); }
+  .svc-card h3 { font-size: 18px; font-weight: 600; color: #07312a; margin-bottom: 8px; }
+  .svc-card p { font-size: 13px; color: var(--gray-600); line-height: 1.7; margin-bottom: 16px; }
+  .svc-link { font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.2s; }
+  .svc-link:hover { gap: 9px; }
+
+  /* ABOUT */
+  .about { padding: 96px 5%; background: white; }
+  .about-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-card { background: var(--teal-dark); border-radius: var(--radius-lg); padding: 44px; color: white; position: relative; overflow: hidden; }
+  .about-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+  .about-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--teal), var(--red)); }
+  .about-year { font-family: 'Playfair Display', serif; font-size: 76px; font-weight: 700; line-height: 1; color: white; margin-bottom: 4px; }
+  .about-year-label { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 20px; }
+  .about-card-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .about-stat { background: rgba(255,255,255,0.1); border-radius: var(--radius-md); padding: 13px; }
+  .about-stat-num { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: white; }
+  .about-stat-label { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 3px; }
+  .about-float { position: absolute; bottom: -20px; right: -20px; background: white; border-radius: var(--radius-md); padding: 14px 18px; box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 10px; }
+  .about-float-icon { font-size: 24px; }
+  .about-float-text { font-size: 13px; font-weight: 600; color: var(--teal-dark); }
+  .about-float-sub { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
+  .about-content .section-header { text-align: left; margin: 0 0 26px; }
+  .about-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+  .about-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+  .about-check { width: 20px; height: 20px; min-width: 20px; background: var(--teal-50); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .about-check svg { width: 11px; height: 11px; }
+
+  /* PAKET */
+  .paket { padding: 96px 5%; background: var(--gray-50); }
+  .paket-inner { max-width: 1240px; margin: 0 auto; }
+  .paket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .paket-card { background: white; border-radius: var(--radius-lg); padding: 36px; border: 1px solid var(--gray-200); }
+  .paket-card-title { font-family: 'Playfair Display', serif; font-size: 21px; font-weight: 700; color: #07312a; margin-bottom: 4px; }
+  .paket-card-sub { font-size: 12px; color: var(--teal); font-weight: 600; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 1px; }
+  .paket-list { list-style: none; display: flex; flex-direction: column; gap: 13px; }
+  .paket-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 14px; color: var(--gray-600); line-height: 1.6; }
+  .paket-num { width: 22px; height: 22px; min-width: 22px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; margin-top: 1px; }
+  .paket-chk { width: 20px; height: 20px; min-width: 20px; background: var(--teal-50); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+
+  /* REFERENSI */
+  .referensi { padding: 96px 5%; background: white; }
+  .referensi-inner { max-width: 1240px; margin: 0 auto; }
+  .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .ref-card { background: var(--gray-50); border-radius: var(--radius-lg); padding: 30px; border: 1px solid var(--gray-200); }
+  .ref-city { display: inline-flex; align-items: center; gap: 6px; background: var(--teal); color: white; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; margin-bottom: 18px; }
+  .ref-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .ref-list li { font-size: 13px; color: var(--gray-600); padding: 5px 0; border-bottom: 1px solid var(--gray-200); display: flex; align-items: center; gap: 7px; }
+  .ref-list li:last-child { border-bottom: none; }
+  .ref-list li::before { content: ''; width: 5px; height: 5px; min-width: 5px; background: var(--teal); border-radius: 50%; }
+
+  /* CTA */
+  .cta-section { padding: 80px 5%; background: white; }
+  .cta-box { max-width: 1240px; margin: 0 auto; background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%); border-radius: var(--radius-lg); padding: 60px 52px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+  .cta-box::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: rgba(255,255,255,0.05); border-radius: 50%; pointer-events: none; }
+  .cta-eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+  .cta-title { font-size: clamp(22px, 3vw, 34px); font-weight: 700; color: white; line-height: 1.2; margin-bottom: 10px; }
+  .cta-desc { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.6; }
+  .cta-actions { display: flex; flex-direction: column; gap: 10px; align-items: center; flex-shrink: 0; position: relative; z-index: 1; }
+  .btn-white { display: inline-flex; align-items: center; gap: 8px; background: white; color: var(--teal-dark); padding: 13px 26px; border-radius: 100px; font-size: 14px; font-weight: 600; text-decoration: none; transition: transform 0.15s, box-shadow 0.2s; box-shadow: 0 4px 16px rgba(0,0,0,0.15); white-space: nowrap; }
   .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
-
-  .cta-hotline {
-    font-size: 13px;
-    color: rgba(255,255,255,0.7);
-    text-align: center;
-  }
-
+  .cta-hotline { font-size: 12px; color: rgba(255,255,255,0.7); text-align: center; }
   .cta-hotline strong { color: white; }
 
-  /* ===== CONTACT FORM ===== */
-  .contact {
-    padding: 100px 5%;
-    background: var(--gray-50);
-  }
+  /* CONTACT */
+  .contact { padding: 96px 5%; background: var(--gray-50); }
+  .contact-inner { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+  .contact-info .section-header { text-align: left; margin: 0 0 32px; }
+  .contact-branches { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+  .contact-branch { background: white; border-radius: var(--radius-md); padding: 18px 22px; border: 1px solid var(--gray-200); border-left: 4px solid var(--teal); }
+  .contact-branch-city { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); margin-bottom: 5px; }
+  .contact-branch-addr { font-size: 13px; color: var(--gray-600); line-height: 1.6; margin-bottom: 5px; }
+  .contact-branch-tel { font-size: 14px; font-weight: 600; color: #07312a; }
+  .contact-email { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: var(--teal-50); border-radius: var(--radius-md); }
+  .contact-email-icon { font-size: 18px; }
+  .contact-email-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gray-400); }
+  .contact-email-val { font-size: 13px; font-weight: 500; color: var(--teal-dark); }
+  .contact-form { background: white; border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200); }
+  .form-group { margin-bottom: 16px; }
+  .form-label { display: block; font-size: 12px; font-weight: 600; color: var(--gray-600); margin-bottom: 6px; }
+  .form-input, .form-select, .form-textarea { width: 100%; padding: 11px 14px; border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--gray-800); background: white; transition: border-color 0.2s, box-shadow 0.2s; outline: none; appearance: none; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,168,157,0.1); }
+  .form-textarea { resize: vertical; min-height: 96px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+  .form-submit { width: 100%; padding: 13px; background: var(--teal); color: white; border: none; border-radius: 100px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.15s; margin-top: 4px; }
+  .form-submit:hover { background: var(--teal-dark); transform: translateY(-1px); }
+  .form-privacy { font-size: 11px; color: var(--gray-400); text-align: center; margin-top: 9px; }
 
-  .contact-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 80px;
-    align-items: start;
-  }
+  /* FOOTER */
+  footer { background: #07312a; padding: 56px 5% 26px; color: rgba(255,255,255,0.7); }
+  .footer-inner { max-width: 1240px; margin: 0 auto; }
+  .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 44px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 26px; }
+  .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--teal); margin-bottom: 3px; }
+  .footer-brand-pt { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 12px; }
+  .footer-brand-desc { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.5); max-width: 250px; }
+  .footer-social { display: flex; gap: 8px; margin-top: 18px; }
+  .footer-social a { width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; text-decoration: none; color: white; transition: background 0.2s; }
+  .footer-social a:hover { background: var(--teal); }
+  .footer-col h4 { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .footer-links a { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 8px; }
 
-  .contact-info .section-header { text-align: left; margin: 0 0 40px; }
-
-  .contact-details {
-    display: flex; flex-direction: column; gap: 20px;
-  }
-
-  .contact-detail-item {
-    display: flex; align-items: flex-start; gap: 14px;
-    font-size: 14px;
-    color: var(--gray-600);
-  }
-
-  .contact-detail-icon {
-    width: 40px; height: 40px; min-width: 40px;
-    background: var(--green-50);
-    border-radius: var(--radius-sm);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 18px;
-  }
-
-  .contact-detail-label {
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--gray-400);
-    margin-bottom: 4px;
-  }
-
-  .contact-detail-val {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--green-800);
-  }
-
-  .contact-form-card {
-    background: white;
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--gray-200);
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  .form-label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--gray-600);
-    margin-bottom: 8px;
-    letter-spacing: 0.2px;
-  }
-
-  .form-input, .form-select, .form-textarea {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1.5px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    color: var(--gray-800);
-    background: white;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-    appearance: none;
-  }
-
-  .form-input:focus, .form-select:focus, .form-textarea:focus {
-    border-color: var(--green-500);
-    box-shadow: 0 0 0 3px rgba(30,138,82,0.12);
-  }
-
-  .form-textarea { resize: vertical; min-height: 110px; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-
-  .form-submit {
-    width: 100%;
-    padding: 14px;
-    background: var(--green-500);
-    color: white;
-    border: none;
-    border-radius: 100px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    margin-top: 8px;
-  }
-
-  .form-submit:hover { background: var(--green-700); transform: translateY(-1px); }
-
-  .form-privacy {
-    font-size: 12px;
-    color: var(--gray-400);
-    text-align: center;
-    margin-top: 12px;
-  }
-
-  /* ===== FOOTER ===== */
-  footer {
-    background: var(--green-900);
-    padding: 64px 5% 32px;
-    color: rgba(255,255,255,0.7);
-  }
-
-  .footer-inner {
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-
-  .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 48px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 32px;
-  }
-
-  .footer-brand-desc {
-    font-size: 14px;
-    line-height: 1.7;
-    color: rgba(255,255,255,0.55);
-    margin-top: 16px;
-    max-width: 280px;
-  }
-
-  .footer-col h4 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 18px;
-  }
-
-  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-
-  .footer-links a {
-    font-size: 14px;
-    color: rgba(255,255,255,0.65);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--green-300); }
-
-  .footer-bottom {
-    display: flex; align-items: center; justify-content: space-between;
-    font-size: 13px;
-    color: rgba(255,255,255,0.4);
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* ===== ANIMATIONS ===== */
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .animate-in {
-    animation: fadeInUp 0.6s ease forwards;
-  }
-
+  /* ANIMATIONS */
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-in { animation: fadeInUp 0.6s ease forwards; }
   .delay-1 { animation-delay: 0.1s; opacity: 0; }
-  .delay-2 { animation-delay: 0.2s; opacity: 0; }
-  .delay-3 { animation-delay: 0.35s; opacity: 0; }
+  .delay-2 { animation-delay: 0.22s; opacity: 0; }
+  .delay-3 { animation-delay: 0.36s; opacity: 0; }
   .delay-4 { animation-delay: 0.5s; opacity: 0; }
 
-  /* ===== RESPONSIVE ===== */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+    .hero-inner, .about-inner, .contact-inner { grid-template-columns: 1fr; gap: 44px; }
     .hero-visual { display: none; }
-    .about-inner { grid-template-columns: 1fr; }
     .cta-box { grid-template-columns: 1fr; text-align: center; }
     .cta-actions { align-items: center; }
-    .contact-inner { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
-    nav { padding: 0 4%; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 26px; }
+    .ref-grid, .paket-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
   }
-
   @media (max-width: 600px) {
     .form-row { grid-template-columns: 1fr; }
     .footer-top { grid-template-columns: 1fr; }
-    .hero-stats { gap: 20px; }
-    .cta-box { padding: 48px 28px; }
+    .cta-box { padding: 40px 22px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-icon">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C4.5 5.8 3 7.5 3 9.5C3 11.8 4.8 13.7 7 13.9V20C7 21.1 7.9 22 9 22H15C16.1 22 17 21.1 17 20V13.9C19.2 13.7 21 11.8 21 9.5C21 7.5 19.5 5.8 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/>
-      </svg>
+    <div>
+      <div class="logo-text-classic">CLASSIC <span class="logo-arrow">↗</span></div>
+      <span class="logo-text-sub">Care Service</span>
     </div>
-    <span class="nav-logo-text">Hygiene<span>ID</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="#layanan">Layanan</a></li>
     <li><a href="#tentang">Tentang Kami</a></li>
-    <li><a href="#testimoni">Klien</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#paket">Paket Sewa</a></li>
+    <li><a href="#referensi">Klien</a></li>
     <li><a href="#kontak" class="nav-cta">Hubungi Kami</a></li>
   </ul>
+  <div class="nav-pills">
+    <a href="#" class="nav-pill">House</a>
+    <span class="nav-pill-dot">◆</span>
+    <a href="#" class="nav-pill">Building</a>
+    <span class="nav-pill-dot">◆</span>
+    <a href="#" class="nav-pill">Commercial</a>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-bg-shape"></div>
-  <div class="hero-bg-shape2"></div>
+  <div class="hero-bg1"></div>
+  <div class="hero-bg2"></div>
   <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-badge animate-in">
-        <div class="hero-badge-dot"></div>
-        Solusi Hygiene Profesional #1 di Indonesia
+    <div>
+      <div class="hero-badge animate-in"><div class="hero-badge-dot"></div>Berdiri sejak 1999 — Surabaya · Bali · Yogyakarta</div>
+      <h1 class="animate-in delay-1">Lingkungan Bersih Dan Sehat <em>Layak Anda Dapatkan</em></h1>
+      <p class="hero-tagline-en animate-in delay-2">You Deserve a Clean and Healthy Environment</p>
+      <p class="hero-desc animate-in delay-2">PT. Jasatama Prima Lestari Jaya — mitra profesional pengelolaan dan pemeliharaan kebersihan untuk gedung, hotel, villa, pabrik, kampus, rumah sakit, bank, dan restoran di seluruh Indonesia.</p>
+      <div class="hero-pills animate-in delay-3">
+        <span class="hero-pill">🏠 House</span>
+        <span class="hero-pill outline">🏢 Building</span>
+        <span class="hero-pill outline">🏪 Commercial</span>
       </div>
-      <h1 class="animate-in delay-1">Lingkungan Bisnis <em>Lebih Bersih,</em> Lebih Sehat</h1>
-      <p class="hero-desc animate-in delay-2">
-        Kami menyediakan layanan hygiene profesional lengkap untuk toilet, ruang kerja, dan fasilitas bisnis Anda. Solusi terpercaya selama lebih dari 30 tahun di Indonesia.
-      </p>
       <div class="hero-actions animate-in delay-3">
-        <a href="#kontak" class="btn-primary">
-          Konsultasi Gratis
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <a href="#kontak" class="btn-primary">Konsultasi Gratis <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a href="#layanan" class="btn-secondary">Lihat Layanan</a>
       </div>
       <div class="hero-stats animate-in delay-4">
-        <div>
-          <div class="hero-stat-num">30+</div>
-          <div class="hero-stat-label">Tahun Pengalaman</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">46</div>
-          <div class="hero-stat-label">Cabang di Indonesia</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">5.000+</div>
-          <div class="hero-stat-label">Klien Bisnis</div>
-        </div>
+        <div><div class="hero-stat-num">1999</div><div class="hero-stat-label">Tahun Berdiri</div></div>
+        <div><div class="hero-stat-num">3 Kota</div><div class="hero-stat-label">Operasional</div></div>
+        <div><div class="hero-stat-num">30+</div><div class="hero-stat-label">Referensi Klien</div></div>
       </div>
     </div>
-
     <div class="hero-visual animate-in delay-2">
-      <div class="hero-card-main">
-        <div class="hero-card-icon-row">
-          <div class="hero-icon-box" style="background:#eaf7f0;">🧴</div>
-          <div class="hero-icon-box" style="background:#e0f5f5;">🌬️</div>
-          <div class="hero-icon-box" style="background:#faeeda;">✋</div>
-          <div class="hero-icon-box" style="background:#e6f1fb;">🚻</div>
-        </div>
-        <div class="hero-card-label">Layanan Unggulan</div>
-        <h3 class="hero-card-title">Rangkaian Solusi Hygiene</h3>
-        <ul class="hero-service-list">
-          <li class="hero-service-item"><span>🧴</span><span>Dispenser Sabun &amp; Hand Sanitizer</span></li>
-          <li class="hero-service-item"><span>🌸</span><span>Premium Scenting &amp; Air Freshener</span></li>
-          <li class="hero-service-item"><span>🚻</span><span>Feminine Hygiene Unit</span></li>
-          <li class="hero-service-item"><span>💨</span><span>Hand Dryer Profesional</span></li>
+      <div class="hero-card">
+        <div class="hero-card-label">We Serve Your Need In</div>
+        <h3 class="hero-card-title">Layanan Classic Care Service</h3>
+        <ul class="hero-svc-list">
+          <li class="hero-svc-item"><span>🧪</span><span>Hygiene Service</span></li>
+          <li class="hero-svc-item"><span>🐜</span><span>Integrated Pest Management</span></li>
+          <li class="hero-svc-item"><span>🪵</span><span>Integrated Termite Management</span></li>
+          <li class="hero-svc-item"><span>🧹</span><span>Cleaning Service</span></li>
+          <li class="hero-svc-item"><span>🌿</span><span>Landscaping Service</span></li>
         </ul>
       </div>
-      <div class="hero-float-badge">
-        <div class="hero-float-icon">✅</div>
+      <div class="hero-float">
+        <div class="hero-float-icon">🏆</div>
         <div>
-          <div class="hero-float-num">Bersertifikat</div>
-          <div class="hero-float-sub">Halal &amp; ISO Certified</div>
+          <div class="hero-float-num">IPPHAMI</div>
+          <div class="hero-float-sub">No. 20500–000049</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLIENT LOGOS -->
 <div class="clients">
   <div class="clients-inner">
     <span class="clients-label">Dipercaya oleh</span>
     <div class="clients-logos">
-      <span class="client-logo-item">Marriott Hotels</span>
-      <span class="client-logo-item">Lippo Malls</span>
-      <span class="client-logo-item">Astra Group</span>
-      <span class="client-logo-item">Unilever</span>
-      <span class="client-logo-item">BRI</span>
-      <span class="client-logo-item">Pertamina</span>
+      <span class="client-item">Mall Bali Galeria</span>
+      <span class="client-item">PT Semen Gresik</span>
+      <span class="client-item">Bank Mandiri</span>
+      <span class="client-item">PT PLN Persero</span>
+      <span class="client-item">Universitas Gajah Mada</span>
+      <span class="client-item">PT Sinar Sosro</span>
     </div>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section class="services" id="layanan">
   <div class="services-inner">
     <div class="section-header">
       <div class="section-eyebrow">Layanan Kami</div>
-      <h2 class="section-title">Solusi Hygiene untuk Setiap Kebutuhan Bisnis</h2>
-      <p class="section-desc">Dari toilet hingga ruang kerja, kami memiliki produk dan layanan tepat untuk menjaga standar kebersihan tertinggi di bisnis Anda.</p>
+      <h2 class="section-title">Solusi Lengkap untuk Setiap Kebutuhan Properti</h2>
+      <p class="section-desc">Dari Building Service hingga Production Division — Classic Care Service hadir untuk menjaga lingkungan bisnis Anda tetap bersih, sehat, dan nyaman.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon green">🧴</div>
-        <h3>Hand Hygiene</h3>
-        <p>Dispenser sabun tangan, hand sanitizer, dan hand dryer profesional untuk mencegah penyebaran kuman di tempat kerja.</p>
-        <a href="#" class="service-link">Pelajari selengkapnya →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon teal">🌸</div>
-        <h3>Premium Scenting</h3>
-        <p>Ciptakan kesan pertama yang tak terlupakan dengan sistem wewangian premium yang dapat disesuaikan untuk brand Anda.</p>
-        <a href="#" class="service-link">Pelajari selengkapnya →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon blue">🚻</div>
-        <h3>Toilet Hygiene</h3>
-        <p>Rangkaian lengkap produk kebersihan toilet termasuk Feminine Hygiene Unit, air freshener, dan solusi sanitasi modern.</p>
-        <a href="#" class="service-link">Pelajari selengkapnya →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon amber">🌿</div>
-        <h3>Essential Range</h3>
-        <p>Solusi hygiene komersial esensial yang dirancang untuk mencegah kontaminasi silang dan melindungi kesehatan di lingkungan bisnis.</p>
-        <a href="#" class="service-link">Pelajari selengkapnya →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon green">🧹</div>
-        <h3>Floor Care</h3>
-        <p>Perawatan lantai profesional dengan keset dan solusi floor mat yang menjaga kebersihan dan keselamatan area bisnis Anda.</p>
-        <a href="#" class="service-link">Pelajari selengkapnya →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon teal">♻️</div>
-        <h3>Eco-Friendly Solutions</h3>
-        <p>Solusi hygiene ramah lingkungan yang mendukung keberlanjutan bisnis Anda — termasuk program pengurangan plastik yang telah terbukti.</p>
-        <a href="#" class="service-link">Pelajari selengkapnya →</a>
-      </div>
+      <div class="svc-card"><div class="svc-icon">🧪</div><h3>Hygiene Service</h3><p>Pelayanan mengharumkan ruangan dan toilet dengan peralatan otomatis untuk menciptakan lingkungan yang sehat, harum, dan segar setiap saat.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-icon">🐜</div><h3>Pest, Rodent & Termite Control</h3><p>Pengendalian hama profesional — Nyamuk, Lalat, Kecoak, Tikus, dan Rayap. Terhindar dari binatang pengganggu dan perusak properti Anda.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-icon">🧹</div><h3>Cleaning Service</h3><p>Membersihkan gedung dari plafon hingga lantai, toilet, luar gedung. Termasuk washing carpet, sofa, dan polishing marmer/granit.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-icon">🌿</div><h3>Landscaping Service</h3><p>Pemeliharaan dan penataan taman serta tanaman baik di dalam maupun luar ruangan agar selalu terlihat indah dan alami.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-icon">🪵</div><h3>Produksi Arang Kayu</h3><p>Arang kayu sebagai pengurang bau, kelembapan, dan penjernih udara & air. Telah diekspor ke Timur Tengah, Jepang, Korea, Malaysia, dan Singapura.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-icon">🧴</div><h3>Toilet Hygiene Products</h3><p>Soap Dispenser, Hand Soap, Body Soap, Shampoo cosmetic grade. Hand Dryer 1800W, Aerosol Dispenser, Sanitary Disposal anti bakteri untuk toilet wanita.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="tentang">
   <div class="about-inner">
-    <div class="about-visual">
-      <div class="about-main-card">
-        <div class="about-big-num">30+</div>
-        <div class="about-big-label">Tahun melayani bisnis Indonesia</div>
-        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;">Kami memahami standar kebersihan yang dibutuhkan berbagai industri — dari hotel bintang lima hingga pusat perbelanjaan terbesar.</p>
+    <div style="position:relative;">
+      <div class="about-card">
+        <div class="about-year">1999</div>
+        <div class="about-year-label">Berdiri di Surabaya — melayani Indonesia</div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;">PT. Jasatama Prima Lestari Jaya telah melayani pengelolaan dan pemeliharaan berbagai properti — gedung perkantoran, hotel, villa, pabrik, kampus, rumah sakit, bank, dan restoran.</p>
         <div class="about-card-stats">
-          <div class="about-stat-mini">
-            <div class="about-stat-mini-num">46</div>
-            <div class="about-stat-mini-label">Cabang Nasional</div>
-          </div>
-          <div class="about-stat-mini">
-            <div class="about-stat-mini-num">5.000+</div>
-            <div class="about-stat-mini-label">Klien Aktif</div>
-          </div>
-          <div class="about-stat-mini">
-            <div class="about-stat-mini-num">200+</div>
-            <div class="about-stat-mini-label">Tenaga Ahli</div>
-          </div>
-          <div class="about-stat-mini">
-            <div class="about-stat-mini-num">70+</div>
-            <div class="about-stat-mini-label">Negara Operasi</div>
-          </div>
+          <div class="about-stat"><div class="about-stat-num">3 Kota</div><div class="about-stat-label">Surabaya, Bali, Jogja</div></div>
+          <div class="about-stat"><div class="about-stat-num">30+</div><div class="about-stat-label">Referensi Klien</div></div>
+          <div class="about-stat"><div class="about-stat-num">5 Negara</div><div class="about-stat-label">Ekspor Arang Kayu</div></div>
+          <div class="about-stat"><div class="about-stat-num">25+</div><div class="about-stat-label">Tahun Pengalaman</div></div>
         </div>
       </div>
       <div class="about-float">
-        <div class="about-float-icon">🏆</div>
-        <div>
-          <div class="about-float-text">ISO 9001 Certified</div>
-          <div class="about-float-sub">Standar kualitas internasional</div>
-        </div>
+        <div class="about-float-icon">📋</div>
+        <div><div class="about-float-text">Anggota IPPHAMI</div><div class="about-float-sub">No. 20500 – 000049</div></div>
       </div>
     </div>
-
     <div class="about-content">
       <div class="section-header">
         <div class="section-eyebrow">Tentang Kami</div>
-        <h2 class="section-title">Ahlinya Hygiene untuk Bisnis Indonesia</h2>
-        <p class="section-desc">Kami adalah mitra hygiene terpercaya bagi ribuan bisnis di seluruh Indonesia. Solusi kami dirancang khusus untuk memenuhi kebutuhan spesifik setiap industri.</p>
+        <h2 class="section-title">PT. Jasatama Prima Lestari Jaya</h2>
+        <p class="section-desc">Merk Dagang "Classic" Care Service — solusi profesional untuk lingkungan yang bersih, sehat, nyaman, indah, dan aman bagi semua orang.</p>
       </div>
       <ul class="about-list">
-        <li class="about-list-item">
-          <div class="about-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span>Layanan profesional tersedia di <strong>46 kota</strong> di seluruh Indonesia, termasuk Bali, Surabaya, Bandung, dan Medan.</span>
-        </li>
-        <li class="about-list-item">
-          <div class="about-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span>Semua produk telah mendapatkan <strong>sertifikasi Halal</strong> dan memenuhi standar regulasi kesehatan Indonesia.</span>
-        </li>
-        <li class="about-list-item">
-          <div class="about-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span>Sistem penyewaan fleksibel dengan <strong>kontrak yang dapat disesuaikan</strong> — tanpa biaya pembelian awal yang besar.</span>
-        </li>
-        <li class="about-list-item">
-          <div class="about-check">
-            <svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1e8a52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span>Tim teknisi berpengalaman siap memberikan <strong>servis berkala</strong> dan respons cepat untuk setiap kebutuhan Anda.</span>
-        </li>
+        <li><div class="about-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Beroperasi di <strong>Surabaya, Bali, dan Yogyakarta</strong> dengan tim profesional berpengalaman di setiap cabang.</span></li>
+        <li><div class="about-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Terdaftar resmi dengan <strong>No. Ijin Usaha 503/066.A/436.6.11/2010</strong> dan izin Dinkes dari pemerintah.</span></li>
+        <li><div class="about-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Produksi arang kayu telah <strong>diekspor ke 5 negara</strong> — Timur Tengah, Jepang, Korea, Malaysia, dan Singapura.</span></li>
+        <li><div class="about-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Sistem <strong>paket sewa kontrak</strong> — survey gratis, instalasi, pemeliharaan rutin, dan penggantian unit tanpa biaya tambahan.</span></li>
       </ul>
-      <div style="margin-top:36px;">
-        <a href="#kontak" class="btn-primary">Jadwalkan Asesmen Gratis</a>
-      </div>
+      <div style="margin-top:28px;"><a href="#kontak" class="btn-primary">Jadwalkan Survey Gratis</a></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="testimoni">
-  <div class="testimonials-inner">
+<section class="paket" id="paket">
+  <div class="paket-inner">
     <div class="section-header">
-      <div class="section-eyebrow">Testimoni Klien</div>
-      <h2 class="section-title">Dipercaya oleh Bisnis Terkemuka</h2>
-      <p class="section-desc">Apa yang dikatakan klien kami tentang layanan hygiene profesional kami.</p>
+      <div class="section-eyebrow">Sistem Kerjasama</div>
+      <h2 class="section-title">Paket Sewa & Kondisi Service</h2>
+      <p class="section-desc">Semua unit milik Classic Care Service dipinjamkan kepada pelanggan dalam periode kontrak — termasuk semua biaya pemeliharaan.</p>
     </div>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Sejak menggunakan layanan HygieneID, standar kebersihan toilet kami meningkat drastis. Tamu hotel selalu memberikan feedback positif tentang fasilitas kamar mandi kami."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">RD</div>
-          <div>
-            <div class="testi-name">Ridwan Darmawan</div>
-            <div class="testi-role">General Manager — Hotel Bintang 5, Jakarta</div>
-          </div>
-        </div>
+    <div class="paket-grid">
+      <div class="paket-card">
+        <div class="paket-card-title">Paket Sewa</div>
+        <div class="paket-card-sub">Sistem Kerjasama Kontrak</div>
+        <ul class="paket-list">
+          <li><div class="paket-num">1</div><span>Survey awal secara <strong>cuma-cuma</strong> untuk memberikan saran menciptakan lingkungan yang bersih dan sehat.</span></li>
+          <li><div class="paket-num">2</div><span>Penempatan unit sesuai kebutuhan + pengecekan, pemeliharaan, dan penggantian material secara rutin <strong>selama 12 bulan.</strong></span></li>
+          <li><div class="paket-num">3</div><span>Semua unit adalah <strong>milik Classic Care Service</strong>, dipinjamkan dengan periode kontrak tertentu.</span></li>
+          <li><div class="paket-num">4</div><span>Paket termasuk biaya <strong>bahan kimia, parfum, dan penggantian baterai</strong> tanpa biaya tambahan.</span></li>
+        </ul>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Premium Scenting dari HygieneID benar-benar mengubah pengalaman berbelanja di mall kami. Pengunjung sering bertanya wewangian apa yang kami gunakan — brand awareness meningkat!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar">SA</div>
-          <div>
-            <div class="testi-name">Siti Aisyah</div>
-            <div class="testi-role">Facility Manager — Pusat Perbelanjaan, Surabaya</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Sistem dispenser sabun otomatis mereka sangat membantu dalam menjaga higienitas karyawan di pabrik kami. Kasus sakit akibat kuman menurun signifikan sejak penggunaan."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">BT</div>
-          <div>
-            <div class="testi-name">Budi Tanoto</div>
-            <div class="testi-role">HSE Manager — Perusahaan Manufaktur, Karawang</div>
-          </div>
+      <div class="paket-card">
+        <div class="paket-card-title">Kondisi Service</div>
+        <div class="paket-card-sub">Yang Kami Jamin</div>
+        <ul class="paket-list">
+          <li><div class="paket-chk"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Secara rutin memelihara dan memastikan semua unit berjalan dengan baik.</span></li>
+          <li><div class="paket-chk"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Mengisi disinfektan <strong>setiap bulan</strong> tanpa biaya tambahan.</span></li>
+          <li><div class="paket-chk"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Mengisi parfum sesuai <strong>perjanjian kontrak</strong> yang telah disepakati.</span></li>
+          <li><div class="paket-chk"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#00a89d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span>Mengganti unit yang <strong>tidak berfungsi tanpa biaya tambahan.</strong></span></li>
+        </ul>
+        <div style="margin-top:24px;padding:16px;background:var(--teal-50);border-radius:var(--radius-md);border-left:4px solid var(--teal);">
+          <p style="font-size:13px;color:var(--teal-dark);font-weight:500;line-height:1.6;">💡 Hubungi kami untuk mendapatkan survei gratis dan penawaran paket yang disesuaikan dengan kebutuhan bisnis Anda.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="faq-inner">
+<section class="referensi" id="referensi">
+  <div class="referensi-inner">
     <div class="section-header">
-      <div class="section-eyebrow">FAQ</div>
-      <h2 class="section-title">Pertanyaan yang Sering Ditanyakan</h2>
-      <p class="section-desc">Temukan jawaban atas pertanyaan umum mengenai layanan kami.</p>
+      <div class="section-eyebrow">Referensi Pelanggan</div>
+      <h2 class="section-title">Dipercaya oleh Ratusan Bisnis Terkemuka</h2>
+      <p class="section-desc">Classic Care Service telah melayani berbagai institusi pemerintahan, perusahaan swasta, hotel, rumah sakit, dan pusat perbelanjaan di tiga kota besar Indonesia.</p>
     </div>
-    <div class="faq-list">
-      <div class="faq-item open">
-        <div class="faq-question">
-          <span>Bagaimana sistem penyewaan unit HygieneID bekerja?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Unit HygieneID tersedia melalui sistem kontrak penyewaan, bukan pembelian putus. Ini berarti Anda mendapatkan unit, instalasi profesional, pengisian ulang produk secara berkala, serta servis dan perawatan — semua dalam satu biaya bulanan yang terjangkau. Hubungi kami untuk mendapatkan penawaran yang disesuaikan dengan kebutuhan bisnis Anda.</div>
-        </div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-city">📍 Surabaya</div>
+        <ul class="ref-list">
+          <li>Golf Graha Family</li><li>Atlas Sport Centre</li><li>RS. Mitra Keluarga</li>
+          <li>PT PLN (Persero) P3B Jawa Timur</li><li>Kantor Gubernur Grahadi Jatim</li>
+          <li>Kantor Pelayanan Pajak Madya Sidoarjo</li><li>PT. Pabrik Kertas Tjiwi Kimia</li>
+          <li>PT. Sinar Sosro Mojosari</li><li>PT. Semen Gresik</li><li>Inna Simpang Hotel, dll</li>
+        </ul>
       </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Apakah layanan tersedia di seluruh Indonesia?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Ya, kami memiliki 46 cabang yang tersebar di seluruh Indonesia, termasuk Jakarta, Surabaya, Bandung, Bali, Medan, Semarang, dan kota-kota besar lainnya. Tim ahli kami siap melayani kebutuhan hygiene bisnis Anda di mana pun Anda berada.</div>
-        </div>
+      <div class="ref-card">
+        <div class="ref-city">📍 Bali</div>
+        <ul class="ref-list">
+          <li>Mall Bali Galeria</li><li>Seminyak Lagoon and Spa</li><li>Inti Dufree Promosindo, PT</li>
+          <li>Kopi Bali House</li><li>Kantor Gubernur Bali</li><li>Kantor Bupati Jembrana</li>
+          <li>Mama's German Restaurant</li><li>Pemkab Jembrana</li>
+          <li>PT. Agung Automall</li><li>PT. Putra Bhineka, dll</li>
+        </ul>
       </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Apakah produk HygieneID sudah bersertifikat Halal?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Ya, seluruh rangkaian produk kami telah mendapatkan sertifikasi Halal sesuai standar yang berlaku di Indonesia. Kami berkomitmen untuk menyediakan solusi hygiene yang aman dan sesuai untuk seluruh segmen bisnis di Indonesia.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Berapa lama proses instalasi unit?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Proses instalasi biasanya dapat diselesaikan dalam 1–2 hari kerja setelah kontrak ditandatangani. Tim teknisi berpengalaman kami akan mengunjungi lokasi Anda, melakukan survei, dan menentukan penempatan unit yang paling optimal sesuai kebutuhan fasilitas Anda.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">
-          <span>Industri apa saja yang dilayani?</span>
-          <div class="faq-icon">+</div>
-        </div>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Kami melayani berbagai industri termasuk perhotelan, pusat perbelanjaan, perkantoran, rumah sakit, restoran, pabrik manufaktur, lembaga pendidikan, dan banyak lagi. Solusi kami dapat dikustomisasi sesuai standar dan regulasi industri masing-masing.</div>
-        </div>
+      <div class="ref-card">
+        <div class="ref-city">📍 Yogyakarta</div>
+        <ul class="ref-list">
+          <li>KPPD Wonosari Gunung Kidul</li><li>PT. Dharma Mulia Purna Karya</li>
+          <li>RS. Sardjito</li><li>RSI Hidayatullah</li><li>TWC Prambanan</li>
+          <li>BPD DIY</li><li>Bank Mandiri</li><li>RS. Panti Nugroho</li>
+          <li>Universitas Gajah Mada</li><li>Kantor Gubernur DIY, dll</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA BANNER -->
 <section class="cta-section">
   <div class="cta-box">
     <div style="position:relative;z-index:1;">
       <div class="cta-eyebrow">Mulai Sekarang</div>
-      <h2 class="cta-title">Siap Meningkatkan Standar Hygiene Bisnis Anda?</h2>
-      <p class="cta-desc">Konsultasikan kebutuhan hygiene bisnis Anda dengan para ahli kami. Asesmen awal gratis, tanpa komitmen.</p>
+      <h2 class="cta-title">Siap Meningkatkan Kebersihan & Kesehatan Lingkungan Bisnis Anda?</h2>
+      <p class="cta-desc">Konsultasikan kebutuhan Anda dengan tim Classic Care Service. Survey awal gratis, tanpa komitmen.</p>
     </div>
     <div class="cta-actions">
-      <a href="#kontak" class="btn-white">
-        Hubungi Ahli Kami
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <div class="cta-hotline">atau hubungi <strong>150808</strong></div>
+      <a href="#kontak" class="btn-white">Hubungi Kami <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="cta-hotline">Surabaya: <strong>031 – 878 1648</strong></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="kontak">
   <div class="contact-inner">
     <div class="contact-info">
       <div class="section-header">
         <div class="section-eyebrow">Kontak Kami</div>
-        <h2 class="section-title">Kami Siap Membantu Bisnis Anda</h2>
-        <p class="section-desc">Isi formulir di samping atau hubungi kami langsung. Tim kami akan merespons dalam 1x24 jam kerja.</p>
+        <h2 class="section-title">Kami Siap Melayani Bisnis Anda</h2>
+        <p class="section-desc">Hubungi kantor terdekat atau isi formulir — tim kami merespons dalam 1x24 jam kerja.</p>
       </div>
-      <div class="contact-details">
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">📞</div>
-          <div>
-            <div class="contact-detail-label">Hotline</div>
-            <div class="contact-detail-val">150808</div>
-          </div>
+      <div class="contact-branches">
+        <div class="contact-branch">
+          <div class="contact-branch-city">🏢 Head Office — Surabaya</div>
+          <div class="contact-branch-addr">Jl. Rungkut Mapan Barat VI / BE – 19, Surabaya – Indonesia</div>
+          <div class="contact-branch-tel">📞 031 – 878 1648</div>
         </div>
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">📧</div>
-          <div>
-            <div class="contact-detail-label">Email</div>
-            <div class="contact-detail-val">info@hygieneid.co.id</div>
-          </div>
+        <div class="contact-branch">
+          <div class="contact-branch-city">🌴 Branch — Bali</div>
+          <div class="contact-branch-addr">Jl. Tukad Batang Hari III C No.2, Denpasar – Bali</div>
+          <div class="contact-branch-tel">📞 0361 – 421643</div>
         </div>
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">📍</div>
-          <div>
-            <div class="contact-detail-label">Kantor Pusat</div>
-            <div class="contact-detail-val">South Quarter Tower B, Lantai 21<br>Jl. R.A. Kartini, Jakarta Selatan 12430</div>
-          </div>
+        <div class="contact-branch">
+          <div class="contact-branch-city">🏛️ Branch — Yogyakarta</div>
+          <div class="contact-branch-addr">Jl. Kaliurang Km 8,5 Gg. Nangka No.3 Dayu, Yogyakarta</div>
+          <div class="contact-branch-tel">📞 0274 – 887467</div>
         </div>
-        <div class="contact-detail-item">
-          <div class="contact-detail-icon">🕐</div>
-          <div>
-            <div class="contact-detail-label">Jam Operasional</div>
-            <div class="contact-detail-val">Senin – Jumat, 08.00 – 17.00 WIB</div>
-          </div>
+      </div>
+      <div class="contact-email">
+        <div class="contact-email-icon">✉️</div>
+        <div>
+          <div class="contact-email-label">Email</div>
+          <div class="contact-email-val">jasatama.classic@gmail.com</div>
         </div>
       </div>
     </div>
-
-    <div class="contact-form-card">
-      <h3 style="font-size:20px;color:var(--green-900);margin-bottom:24px;">Kirim Pesan</h3>
+    <div class="contact-form">
+      <h3 style="font-family:'Playfair Display',serif;font-size:19px;color:#07312a;margin-bottom:20px;">Kirim Pesan</h3>
       <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Nama Lengkap</label>
-          <input type="text" class="form-input" placeholder="Budi Santoso">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Nama Perusahaan</label>
-          <input type="text" class="form-input" placeholder="PT. Maju Bersama">
-        </div>
+        <div class="form-group"><label class="form-label">Nama Lengkap</label><input type="text" class="form-input" placeholder="Nama Anda"></div>
+        <div class="form-group"><label class="form-label">Nama Perusahaan</label><input type="text" class="form-input" placeholder="PT. Nama Perusahaan"></div>
       </div>
       <div class="form-row">
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="budi@perusahaan.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Nomor Telepon</label>
-          <input type="tel" class="form-input" placeholder="0812-xxxx-xxxx">
-        </div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-input" placeholder="email@perusahaan.com"></div>
+        <div class="form-group"><label class="form-label">Nomor Telepon</label><input type="tel" class="form-input" placeholder="08xx-xxxx-xxxx"></div>
       </div>
       <div class="form-group">
-        <label class="form-label">Industri</label>
+        <label class="form-label">Cabang Terdekat</label>
         <select class="form-select">
-          <option value="">Pilih industri bisnis Anda</option>
-          <option>Perhotelan & Pariwisata</option>
-          <option>Pusat Perbelanjaan / Retail</option>
-          <option>Perkantoran</option>
-          <option>Rumah Sakit / Klinik</option>
-          <option>Restoran & F&B</option>
-          <option>Manufaktur / Industri</option>
-          <option>Pendidikan</option>
-          <option>Lainnya</option>
+          <option value="">Pilih cabang terdekat</option>
+          <option>Surabaya & Jawa Timur</option>
+          <option>Bali</option>
+          <option>Yogyakarta & Jawa Tengah</option>
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label">Pesan / Kebutuhan Anda</label>
-        <textarea class="form-textarea" placeholder="Ceritakan kebutuhan hygiene bisnis Anda..."></textarea>
+        <label class="form-label">Jenis Properti</label>
+        <select class="form-select">
+          <option value="">Pilih jenis properti Anda</option>
+          <option>Hotel / Villa / Resort</option>
+          <option>Gedung Perkantoran</option>
+          <option>Rumah Sakit / Klinik</option>
+          <option>Pabrik / Industri</option>
+          <option>Mall / Pusat Perbelanjaan</option>
+          <option>Kampus / Sekolah</option>
+          <option>Restoran / F&B</option>
+          <option>Perumahan / Residensial</option>
+          <option>Lainnya</option>
+        </select>
       </div>
+      <div class="form-group"><label class="form-label">Pesan / Kebutuhan Anda</label><textarea class="form-textarea" placeholder="Ceritakan kebutuhan kebersihan properti Anda..."></textarea></div>
       <button class="form-submit">Kirim Pesan Sekarang</button>
-      <p class="form-privacy">🔒 Informasi Anda aman bersama kami. Kami tidak akan membagikan data Anda kepada pihak ketiga.</p>
+      <p class="form-privacy">🔒 Data Anda aman. Kami tidak membagikan informasi kepada pihak ketiga.</p>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <div style="width:34px;height:34px;background:var(--green-500);border-radius:6px;display:flex;align-items:center;justify-content:center;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C9.5 2 7.5 3.5 6.5 5.5C4.5 5.8 3 7.5 3 9.5C3 11.8 4.8 13.7 7 13.9V20C7 21.1 7.9 22 9 22H15C16.1 22 17 21.1 17 20V13.9C19.2 13.7 21 11.8 21 9.5C21 7.5 19.5 5.8 17.5 5.5C16.5 3.5 14.5 2 12 2Z"/></svg>
-          </div>
-          <span style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:white;">HygieneID</span>
+        <div class="footer-brand-name">CLASSIC Care Service</div>
+        <div class="footer-brand-pt">PT. Jasatama Prima Lestari Jaya</div>
+        <p class="footer-brand-desc">Solusi profesional pengelolaan dan pemeliharaan kebersihan properti di Indonesia sejak 1999. House · Building · Commercial.</p>
+        <div class="footer-social">
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="Twitter">t</a>
+          <a href="#" title="LinkedIn">in</a>
         </div>
-        <p class="footer-brand-desc">Solusi kebersihan dan hygiene profesional untuk bisnis Indonesia. Melayani 46 kota dengan standar internasional selama lebih dari 30 tahun.</p>
       </div>
       <div class="footer-col">
         <h4>Layanan</h4>
         <ul class="footer-links">
-          <li><a href="#">Hand Hygiene</a></li>
-          <li><a href="#">Premium Scenting</a></li>
-          <li><a href="#">Toilet Hygiene</a></li>
-          <li><a href="#">Essential Range</a></li>
-          <li><a href="#">Floor Care</a></li>
+          <li><a href="#">Hygiene Service</a></li>
+          <li><a href="#">Pest & Termite Control</a></li>
+          <li><a href="#">Cleaning Service</a></li>
+          <li><a href="#">Landscaping</a></li>
+          <li><a href="#">Produksi Arang Kayu</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Perusahaan</h4>
         <ul class="footer-links">
           <li><a href="#">Tentang Kami</a></li>
-          <li><a href="#">Cabang Kami</a></li>
-          <li><a href="#">Karir</a></li>
-          <li><a href="#">Blog & Tips</a></li>
-          <li><a href="#">Keberlanjutan</a></li>
+          <li><a href="#">Paket Sewa</a></li>
+          <li><a href="#">Referensi Klien</a></li>
+          <li><a href="#">Galeri</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Dukungan</h4>
+        <h4>Kantor</h4>
         <ul class="footer-links">
-          <li><a href="#">Hubungi Kami</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Kebijakan Privasi</a></li>
-          <li><a href="#">Syarat & Ketentuan</a></li>
+          <li><a href="#">Surabaya: 031-8781648</a></li>
+          <li><a href="#">Bali: 0361-421643</a></li>
+          <li><a href="#">Yogyakarta: 0274-887467</a></li>
+          <li><a href="#">jasatama.classic@gmail.com</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 HygieneID. Seluruh hak cipta dilindungi.</span>
-      <span>Bagian dari Rentokil Initial Group</span>
+      <span>© 2025 Classic Care Service — PT. Jasatama Prima Lestari Jaya. Seluruh hak cipta dilindungi.</span>
+      <span>NPWP: 01.874.569.5-615.000</span>
     </div>
   </div>
 </footer>
 
 <script>
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1586,9 +578,8 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
-
-  document.querySelectorAll('.service-card, .testi-card, .about-main-card').forEach(el => {
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.svc-card, .ref-card, .paket-card, .about-card').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
   });
