@@ -35,7 +35,17 @@
   .nav-cta:hover { background: var(--teal-dark) !important; }
 
   /* HERO */
-  .hero { padding-top: 72px; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(145deg, #f0fafa 0%, #e6f7f6 40%, #d8f3f1 100%); position: relative; overflow: hidden; }
+  .hero { padding-top: 72px; min-height: 100vh; display: flex; align-items: center; background: linear-gradient(145deg, rgba(0,60,50,0.78) 0%, rgba(0,100,90,0.68) 100%), url('assets/images/hero-bg.jpg') center/cover no-repeat; position: relative; overflow: hidden; }
+  .hero h1 { color: white !important; }
+  .hero h1 em { color: #7efff7 !important; }
+  .hero-tagline-en { color: rgba(255,255,255,0.85) !important; }
+  .hero-desc { color: rgba(255,255,255,0.8) !important; }
+  .hero-badge { background: rgba(255,255,255,0.15) !important; border-color: rgba(255,255,255,0.3) !important; color: white !important; }
+  .hero-badge-dot { background: #7efff7 !important; }
+  .hero-stat-num { color: #7efff7 !important; }
+  .hero-stat-label { color: rgba(255,255,255,0.7) !important; }
+  .hero-stats { border-top-color: rgba(255,255,255,0.2) !important; }
+  .hero-pill.outline { border-color: rgba(255,255,255,0.5) !important; color: white !important; }
   .hero-bg1 { position: absolute; top: -120px; right: -120px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,168,157,0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
   .hero-bg2 { position: absolute; bottom: -80px; left: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(232,25,44,0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
   .hero-inner { max-width: 1240px; margin: 0 auto; padding: 80px 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
@@ -91,6 +101,9 @@
   .svc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--teal-light); }
   .svc-card:hover::after { transform: scaleX(1); }
   .svc-icon { width: 54px; height: 54px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; background: var(--teal-50); }
+  .svc-img { width: 100%; height: 180px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 18px; }
+  .svc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+  .svc-card:hover .svc-img img { transform: scale(1.05); }
   .svc-card h3 { font-size: 18px; font-weight: 600; color: #07312a; margin-bottom: 8px; }
   .svc-card p { font-size: 13px; color: var(--gray-600); line-height: 1.7; margin-bottom: 16px; }
   .svc-link { font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.2s; }
@@ -223,10 +236,7 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <div>
-      <div class="logo-text-classic">CLASSIC <span class="logo-arrow">↗</span></div>
-      <span class="logo-text-sub">Care Service</span>
-    </div>
+    <img src="assets/images/logo.png" alt="Classic Care Service" style="height:48px;width:auto;">
   </a>
   <ul class="nav-links">
     <li><a href="#layanan">Layanan</a></li>
@@ -313,12 +323,12 @@
       <p class="section-desc">Dari Building Service hingga Production Division — Classic Care Service hadir untuk menjaga lingkungan bisnis Anda tetap bersih, sehat, dan nyaman.</p>
     </div>
     <div class="services-grid">
-      <div class="svc-card"><div class="svc-icon">🧪</div><h3>Hygiene Service</h3><p>Pelayanan mengharumkan ruangan dan toilet dengan peralatan otomatis untuk menciptakan lingkungan yang sehat, harum, dan segar setiap saat.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
-      <div class="svc-card"><div class="svc-icon">🐜</div><h3>Pest, Rodent & Termite Control</h3><p>Pengendalian hama profesional — Nyamuk, Lalat, Kecoak, Tikus, dan Rayap. Terhindar dari binatang pengganggu dan perusak properti Anda.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
-      <div class="svc-card"><div class="svc-icon">🧹</div><h3>Cleaning Service</h3><p>Membersihkan gedung dari plafon hingga lantai, toilet, luar gedung. Termasuk washing carpet, sofa, dan polishing marmer/granit.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-img"><img src="assets/images/hygiene.jpg" alt="Hygiene Service"></div><h3>Hygiene Service</h3><p>Pelayanan mengharumkan ruangan dan toilet dengan peralatan otomatis untuk menciptakan lingkungan yang sehat, harum, dan segar setiap saat.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-img"><img src="assets/images/pest-control.jpg" alt="Pest Control"></div><h3>Pest, Rodent & Termite Control</h3><p>Pengendalian hama profesional — Nyamuk, Lalat, Kecoak, Tikus, dan Rayap. Terhindar dari binatang pengganggu dan perusak properti Anda.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-img"><img src="assets/images/cleaning.jpg" alt="Cleaning Service"></div><h3>Cleaning Service</h3><p>Membersihkan gedung dari plafon hingga lantai, toilet, luar gedung. Termasuk washing carpet, sofa, dan polishing marmer/granit.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
       <div class="svc-card"><div class="svc-icon">🌿</div><h3>Landscaping Service</h3><p>Pemeliharaan dan penataan taman serta tanaman baik di dalam maupun luar ruangan agar selalu terlihat indah dan alami.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
       <div class="svc-card"><div class="svc-icon">🪵</div><h3>Produksi Arang Kayu</h3><p>Arang kayu sebagai pengurang bau, kelembapan, dan penjernih udara & air. Telah diekspor ke Timur Tengah, Jepang, Korea, Malaysia, dan Singapura.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
-      <div class="svc-card"><div class="svc-icon">🧴</div><h3>Toilet Hygiene Products</h3><p>Soap Dispenser, Hand Soap, Body Soap, Shampoo cosmetic grade. Hand Dryer 1800W, Aerosol Dispenser, Sanitary Disposal anti bakteri untuk toilet wanita.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
+      <div class="svc-card"><div class="svc-img"><img src="assets/images/about.jpg" alt="Cleaning Supplies"></div><h3>Toilet Hygiene Products</h3><p>Soap Dispenser, Hand Soap, Body Soap, Shampoo cosmetic grade. Hand Dryer 1800W, Aerosol Dispenser, Sanitary Disposal anti bakteri untuk toilet wanita.</p><a href="#kontak" class="svc-link">Pelajari selengkapnya →</a></div>
     </div>
   </div>
 </section>
@@ -433,6 +443,22 @@
   </div>
 </section>
 
+<section style="padding:96px 5%;background:var(--gray-50);" id="galeri">
+  <div style="max-width:1240px;margin:0 auto;">
+    <div class="section-header">
+      <div class="section-eyebrow">Galeri</div>
+      <h2 class="section-title">Tim Kami di Lapangan</h2>
+      <p class="section-desc">Foto nyata tim Classic Care Service bekerja di berbagai properti klien kami.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;"><img src="assets/images/gallery-1.jpg" alt="Tim Classic di restoran" style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;"><img src="assets/images/gallery-2.jpg" alt="Tim Classic membersihkan kaca" style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;"><img src="assets/images/gallery-3.jpg" alt="Tim Classic polishing lantai" style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+      <div style="border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/3;"><img src="assets/images/gallery-4.jpg" alt="Tim Classic di villa Bali" style="width:100%;height:100%;object-fit:cover;transition:transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-box">
     <div style="position:relative;z-index:1;">
@@ -476,7 +502,7 @@
         <div class="contact-email-icon">✉️</div>
         <div>
           <div class="contact-email-label">Email</div>
-          <div class="contact-email-val">jasatama.classic@gmail.com</div>
+          <div class="contact-email-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="610b00120015000c004f020d001212080221060c00080d4f020e0c">[email&#160;protected]</a></div>
         </div>
       </div>
     </div>
@@ -525,7 +551,7 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-brand-name">CLASSIC Care Service</div>
+        <div class="footer-brand-name"><img src="assets/images/logo.png" alt="Classic Care Service" style="height:44px;width:auto;filter:brightness(0) invert(1);opacity:0.9;"></div>
         <div class="footer-brand-pt">PT. Jasatama Prima Lestari Jaya</div>
         <p class="footer-brand-desc">Solusi profesional pengelolaan dan pemeliharaan kebersihan properti di Indonesia sejak 1999. House · Building · Commercial.</p>
         <div class="footer-social">
@@ -559,7 +585,7 @@
           <li><a href="#">Surabaya: 031-8781648</a></li>
           <li><a href="#">Bali: 0361-421643</a></li>
           <li><a href="#">Yogyakarta: 0274-887467</a></li>
-          <li><a href="#">jasatama.classic@gmail.com</a></li>
+          <li><a href="#"><span class="__cf_email__" data-cfemail="d5bfb4a6b4a1b4b8b4fbb6b9b4a6a6bcb695b2b8b4bcb9fbb6bab8">[email&#160;protected]</span></a></li>
         </ul>
       </div>
     </div>
@@ -570,19 +596,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.svc-card, .ref-card, .paket-card, .about-card').forEach(el => {
-    el.style.opacity = '0';
-    observer.observe(el);
-  });
-</script>
-</body>
-</html>
+      if (entry.isIntersecting)
